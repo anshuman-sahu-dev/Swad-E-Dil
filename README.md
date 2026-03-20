@@ -184,3 +184,31 @@ Stay connected for updates, offers, and food stories!
 © 2026 **WanderFramez\_**. All rights reserved.
 
 > *"From soulful classics to chef's handpicked delights, we serve warmth on every plate."* 🍛
+
+## 👨‍💻 Developer
+
+<div align="center">
+
+### ✨ Made with ❤️ by
+
+# 🧑‍🍳 Anshuman Sahu
+
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=E50914&center=true&vCenter=true&width=435&lines=Front-End+Developer;UI+%2F+UX+Enthusiast;HTML+%7C+CSS+%7C+JavaScript;Building+one+clone+at+a+time+%F0%9F%9A%80)
+
+---
+
+📧 **Email:** toanshumansahu@gmail.com
+📞 **Phone:** +91 7854939308
+
+---
+
+[![GitHub](https://img.shields.io/badge/GitHub-anshuman--sahu--dev-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/anshuman-sahu-dev)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://netflix-india-two.vercel.app/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+
+---
+
+![Profile Views](https://komarev.com/ghpvc/?username=anshuman-sahu-dev&color=E50914&style=for-the-badge&label=PROFILE+VIEWS)
+
+</div>
