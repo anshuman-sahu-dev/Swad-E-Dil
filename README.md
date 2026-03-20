@@ -2,7 +2,7 @@
 
 > Authentic taste made with heart, served with health.
 
-![Swad-e-Dil Banner](https://swad-e-dil.vercel.app/images/Swad-e-dil_poster.jpg)
+![Swad-e-Dil Banner](images/Swad-e-dil_poster.jpg)
 
 ---
 
