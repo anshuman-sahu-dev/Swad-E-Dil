@@ -1,64 +1,103 @@
-# 🍽️ Swad-e-Dil
+# 🍽️ Swad-e-Dil — *Swaad ka safar, parampara ke sang.*
 
-> **Swaad ka safar, parampara ke sang.**
-> *Authentic taste made with heart, served with health.*
+> Authentic taste made with heart, served with health.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://swad-e-dil.vercel.app/)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
-[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+![Swad-e-Dil Banner](https://swad-e-dil.vercel.app/images/Swad-e-dil_poster.jpg)
+
+---
+
+## 📌 Table of Contents
+
+- [About the Project](#about-the-project)
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Pages & Sections](#pages--sections)
+- [Menu Highlights](#menu-highlights)
+- [Design](#design)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Contact](#contact)
+- [License](#license)
 
 ---
 
 ## 📖 About the Project
 
-**Swad-e-Dil** is a restaurant website built to showcase an authentic Indian dining experience. The website brings together the warmth of desi hospitality with a clean, modern web presence — featuring soulful classics, curated menus, and the kind of *mehmaan-nawazi* that feels like home.
+**Swad-e-Dil** is a restaurant website built to showcase authentic Indian cuisine in a warm, welcoming digital space. The site reflects the soul of desi cooking — from North Indian classics to coastal seafood platters — while offering visitors an easy way to browse the menu, learn about the restaurant, and get in touch.
 
-The project has been live for over **5 years**, serving customers across categories of Veg, Non-Veg, and Special Thali offerings.
+The project has been live for **5 years**, serving both loyal customers and first-time visitors with a seamless online experience.
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 [https://swad-e-dil.vercel.app/](https://swad-e-dil.vercel.app/)
+🔗 **[https://swad-e-dil.vercel.app/](https://swad-e-dil.vercel.app/)**
 
 ---
 
 ## ✨ Features
 
-- 🏠 **Home Section** — Hero banner with tagline and CTA to the menu
-- 📖 **About Us** — Story and philosophy of Swad-e-Dil
-- 🥗 **Food Categories** — Separate sections for Veg, Non-Veg, and Special Thali with linked menu cards
-- 🍱 **Food Menu** — Featured dishes with descriptions and prices
-- 💬 **Testimonials** — Customer reviews and feedback
-- 📬 **Contact Section** — Contact form, email, phone, and address
-- 📱 **Responsive Design** — Mobile-friendly layout
-
----
-
-## 🍴 Menu Highlights
-
-| Dish | Description | Price |
-|------|-------------|-------|
-| Royal Thali Delight | North Indian classics — butter naan, paneer butter masala, dal makhani & more | ₹350 |
-| Dakshin Bhojanam | Dosa, medu vada, sambar, lemon rice & mini payasam | ₹250 |
-| Coastal Catch – Seafood Platter | Prawn curry, fish fry, crab masala, rice & sol kadhi | ₹400 |
-| Pakhala Bhata Traditional Platter | Authentic Odia fermented rice with badi chura, aloo bharta & more | ₹350 |
-| Tandoori Non-Veg Treat | Tandoori chicken biryani, chicken tikka, prawn kebab & naan | ₹450 |
-| Desi Veg Lovers' Platter | Rajma, mix veg curry, puri, raita & gulab jamun | ₹250 |
+- 🏠 **Hero Section** — Full-screen landing with tagline and call-to-action
+- 👨‍🍳 **About Us** — Story and values of Swad-e-Dil
+- 🍛 **Food Categories** — Veg, Non-Veg, and Special Thali with downloadable menu cards
+- 📋 **Food Menu** — Curated dishes with descriptions and prices
+- 💬 **Testimonials** — Real customer reviews
+- 📬 **Contact Form** — Easy enquiry form with address, email, and phone
+- 📱 **Fully Responsive** — Works smoothly across desktop, tablet, and mobile
+- 🔗 **Smooth Navigation** — Single-page scrolling with a fixed navbar
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
-|------------|---------|
-| **HTML5** | Page structure and content |
-| **CSS3** | Styling, layout, and responsiveness |
+|---|---|
+| **HTML5** | Page structure and semantic markup |
+| **CSS3** | Custom styling and animations |
+| **Bootstrap 5** | Responsive grid, components, and layout |
 | **JavaScript** | Interactivity and dynamic behavior |
-| **Canva** | Visual design — posters, banners, and graphics |
+| **Canva** | All visual designs — banners, posters, and graphics |
 | **Vercel** | Hosting and deployment |
+
+---
+
+## 📄 Pages & Sections
+
+The website is a **single-page application (SPA)** with smooth scroll navigation across the following sections:
+
+```
+/ (index.html)
+├── #home          → Hero / Landing Section
+├── #about         → About the Restaurant
+├── #food          → Food Categories (Veg / Non-Veg / Special Thali)
+├── #food-menu     → Full Menu with Prices
+├── #testimonials  → Customer Reviews
+└── #contact       → Contact Form & Details
+```
+
+---
+
+## 🍽️ Menu Highlights
+
+| Dish | Description | Price |
+|---|---|---|
+| 🥘 Royal Thali Delight | North Indian classics — butter naan, paneer butter masala, dal makhani & more | ₹350 |
+| 🌴 Dakshin Bhojanam | South Indian combo — dosa, medu vada, sambar, coconut chutney & payasam | ₹250 |
+| 🦞 Coastal Catch – Seafood Platter | Prawn curry, fish fry, crab masala, steamed rice & sol kadhi | ₹400 |
+| 🍚 Pakhala Bhata Traditional Platter | Authentic Odia dish — fermented rice, saga bhaja, fried fish & badi chura | ₹350 |
+| 🍗 Tandoori Non-Veg Treat | Tandoori chicken biryani, tikka, prawn kebab, butter naan & raita | ₹450 |
+| 🥗 Desi Veg Lovers' Platter | Rajma, mix veg curry, puri, rice, raita, papad & gulab jamun | ₹250 |
+
+---
+
+## 🎨 Design
+
+All visual assets — including posters, banners, menu card covers, and category images — were **designed in Canva**.
+
+- 🎯 Design Tool: **[Canva](https://www.canva.com/)**
+- 🖼️ Assets include: hero poster, food category thumbnails, customer avatars, and the restaurant logo
+- 🎨 Color palette: warm earthy tones reflecting authentic Indian cuisine
 
 ---
 
@@ -67,11 +106,11 @@ The project has been live for over **5 years**, serving customers across categor
 ```
 swad-e-dil/
 │
-├── index.html          # Main HTML file
-├── style.css           # Stylesheet
-├── script.js           # JavaScript logic
+├── index.html              # Main HTML file
+├── style.css               # Custom CSS styles
+├── script.js               # JavaScript for interactivity
 │
-└── images/             # All images and assets
+└── images/                 # All image assets (designed in Canva)
     ├── Swad-e-dil_Logo.jpg
     ├── Swad-e-dil_poster.jpg
     ├── Veg menu dp.jpg
@@ -92,54 +131,56 @@ swad-e-dil/
 
 ## 🚀 Getting Started
 
-To run this project locally:
+No build tools or dependencies required. Just clone and open in a browser.
 
-### Prerequisites
+### 1. Clone the Repository
 
-No dependencies or package managers are required. Just a browser!
+```bash
+git clone https://github.com/your-username/swad-e-dil.git
+```
 
-### Installation
+### 2. Navigate to the Project Folder
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/swad-e-dil.git
-   ```
+```bash
+cd swad-e-dil
+```
 
-2. **Navigate into the project folder**
-   ```bash
-   cd swad-e-dil
-   ```
+### 3. Open in Browser
 
-3. **Open in browser**
-   ```bash
-   # Simply open index.html in your preferred browser
-   open index.html
-   ```
+Simply open `index.html` in any modern browser:
 
-   Or use a live server extension (like VS Code's Live Server) for a better experience.
+```bash
+# On macOS
+open index.html
 
----
+# On Windows
+start index.html
 
-## 🎨 Design
+# Or just drag and drop index.html into your browser
+```
 
-All visual assets including posters, banners, menu thumbnails, and graphics were designed using **[Canva](https://www.canva.com/)**.
+> ⚡ No server setup required — it's a pure front-end project!
 
 ---
 
 ## 📬 Contact
 
-For any queries or feedback, reach out via:
+For any queries, reservations, or feedback:
 
-- 📧 **Email:** anshumansahu2306@gmail.com
+- 📧 **Email:** swad-e-dil@gmail.com
 - 📞 **Phone:** +91 7854939308
-- 📍 **Address:** Brahmapur, Ganjam, Odisha
+- 📍 **Address:** Brehmapur, Ganjam, Odisha
 
 ---
 
-## 📄 License
+## 📱 Follow Us
 
-© 2025 **WanderFramez\_**. All rights reserved.
+Stay connected for updates, offers, and food stories!
 
 ---
 
-<p align="center">Made with ❤️ and a lot of desi swaad 🍛</p>
+## 📜 License
+
+© 2026 **WanderFramez\_**. All rights reserved.
+
+> *"From soulful classics to chef's handpicked delights, we serve warmth on every plate."* 🍛
