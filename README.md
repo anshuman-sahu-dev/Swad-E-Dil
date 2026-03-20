@@ -24,7 +24,7 @@
 
 ## 📖 About the Project
 
-**Swad-e-Dil** is a restaurant website built to showcase authentic Indian cuisine in a warm, welcoming digital space. The site reflects the soul of desi cooking — from North Indian classics to coastal seafood platters — while offering visitors an easy way to browse the menu, learn about the restaurant, and get in touch.
+**Swad-e-Dil** is a restaurant website built to showcase authentic Indian cuisine in a warm, welcoming digital space. The site reflects the soul of desi cooking from North Indian classics to coastal seafood platters while offering visitors an easy way to browse the menu, learn about the restaurant, and get in touch.
 
 The project has been live for **5 years**, serving both loyal customers and first-time visitors with a seamless online experience.
 
@@ -82,10 +82,10 @@ The website is a **single-page application (SPA)** with smooth scroll navigation
 
 | Dish | Description | Price |
 |---|---|---|
-| 🥘 Royal Thali Delight | North Indian classics — butter naan, paneer butter masala, dal makhani & more | ₹350 |
-| 🌴 Dakshin Bhojanam | South Indian combo — dosa, medu vada, sambar, coconut chutney & payasam | ₹250 |
+| 🥘 Royal Thali Delight | North Indian classics butter naan, paneer butter masala, dal makhani & more | ₹350 |
+| 🌴 Dakshin Bhojanam | South Indian combo dosa, medu vada, sambar, coconut chutney & payasam | ₹250 |
 | 🦞 Coastal Catch – Seafood Platter | Prawn curry, fish fry, crab masala, steamed rice & sol kadhi | ₹400 |
-| 🍚 Pakhala Bhata Traditional Platter | Authentic Odia dish — fermented rice, saga bhaja, fried fish & badi chura | ₹350 |
+| 🍚 Pakhala Bhata Traditional Platter | Authentic Odia dish fermented rice, saga bhaja, fried fish & badi chura | ₹350 |
 | 🍗 Tandoori Non-Veg Treat | Tandoori chicken biryani, tikka, prawn kebab, butter naan & raita | ₹450 |
 | 🥗 Desi Veg Lovers' Platter | Rajma, mix veg curry, puri, rice, raita, papad & gulab jamun | ₹250 |
 
@@ -93,7 +93,7 @@ The website is a **single-page application (SPA)** with smooth scroll navigation
 
 ## 🎨 Design
 
-All visual assets — including posters, banners, menu card covers, and category images — were **designed in Canva**.
+All visual assets — including posters, banners, menu card covers, and category images were **designed in Canva**.
 
 - 🎯 Design Tool: **[Canva](https://www.canva.com/)**
 - 🖼️ Assets include: hero poster, food category thumbnails, customer avatars, and the restaurant logo
@@ -159,7 +159,7 @@ start index.html
 # Or just drag and drop index.html into your browser
 ```
 
-> ⚡ No server setup required — it's a pure front-end project!
+> ⚡ No server setup required it's a pure front-end project!
 
 ---
 
