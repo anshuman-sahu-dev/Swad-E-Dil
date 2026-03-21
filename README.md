@@ -198,7 +198,7 @@ Stay connected for updates, offers, and food stories!
 ---
 
 📧 **Email:** toanshumansahu@gmail.com
-📞 **Phone:** +91 7854939308
+📞 **Phone:** +91 78549 39308
 
 ---
 
