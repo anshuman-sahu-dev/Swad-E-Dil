@@ -191,7 +191,7 @@ Stay connected for updates, offers, and food stories!
 
 ### ✨ Made with ❤️ by
 
-# 🧑‍🍳 Anshuman Sahu
+# 👨‍💻 Anshuman Sahu
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&pause=1000&color=E50914&center=true&vCenter=true&width=435&lines=Front-End+Developer;UI+%2F+UX+Enthusiast;HTML+%7C+CSS+%7C+JavaScript;Building+one+clone+at+a+time+%F0%9F%9A%80)
 
@@ -206,6 +206,7 @@ Stay connected for updates, offers, and food stories!
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://netflix-india-two.vercel.app/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](#)
 
 ---
 
