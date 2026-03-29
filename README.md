@@ -177,15 +177,13 @@ For any queries, feedback, or collaboration:
 
 ## 📱 Follow Us
 
-Stay connected for updates, offers, and food stories!
+[![Instagram](https://img.shields.io/badge/Instagram-swad--e--dil-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/swad-e-dil/)
 
 ---
 
 ## 📜 License
 
 © 2026 **WanderFramez\_**. All rights reserved.
-
-> *"From soulful classics to chef's handpicked delights, we serve warmth on every plate."* 🍛
 
 ## 👨‍💻 Developer
 
@@ -199,8 +197,9 @@ Stay connected for updates, offers, and food stories!
 
 ---
 
-📧 **Email:** toanshumansahu@gmail.com
-📞 **Phone:** +91 78549 39308
+[![Email](https://img.shields.io/badge/Email-toanshumansahu@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:toanshumansahu@gmail.com) <br>
+[![Phone](https://img.shields.io/badge/Phone-+91_78549_39308-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](tel:+917854939308) <br>
+
 
 ---
 
