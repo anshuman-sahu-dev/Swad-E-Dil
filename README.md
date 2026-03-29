@@ -181,9 +181,15 @@ For any queries, feedback, or collaboration:
 
 ---
 
-## 📜 License
+## 📄 License
 
-© 2026 **WanderFramez\_**. All rights reserved.
+<p align="center">This project is open for <strong>viewing and inspiration.</strong> Please do not <strong>copy or redistribute</strong> the design or content <strong>without permission.</strong></p>
+
+<p align="center">© 2026 <strong>WanderFramez_</strong>. All rights reserved.</p>
+
+---
+
+<p align="center">Designed & Built by <strong>Anshuman Sahu</strong> · Deployed on <a href="https://vercel.com">Vercel</a></p>
 
 ## 👨‍💻 Developer
 
