@@ -1395,6 +1395,292 @@ a.whatsapp:hover i {
   }
 }
 
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+  }
+
+  .showcase-area {
+    height: 60vh;
+  }
+
+  .showcase-container {
+    font-size: 1.45rem;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  #about h2,
+  .testimonial-title,
+  .form-container h2 {
+    font-size: 2rem;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .about-img,
+  .about-text {
+    padding: 20px;
+  }
+
+  .about-img img {
+    height: auto;
+  }
+
+  .food-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .food-type {
+    margin: 0;
+  }
+
+  .food-menu-container {
+    gap: 1.5rem;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .food-menu-container img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .food-description {
+    margin: 1rem 0 0 0;
+  }
+
+  .menu-tools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-search input {
+    width: 100%;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+  }
+
+  .customer-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-img,
+  .form-container {
+    width: 100%;
+  }
+
+  .contact-img img {
+    height: auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-area {
+    height: 65vh;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .auth-page {
+    padding-top: 4rem;
+  }
+
+  .auth-panel {
+    padding: 2rem;
+  }
+
+  .auth-panel h2 {
+    font-size: 2.4rem;
+  }
+
+  .food-menu-item img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .food-menu-item {
+    gap: 1.25rem;
+  }
+
+  .testimonial-box {
+    padding: 1rem 0;
+  }
+
+  .testimonial-box .testimonial-text {
+    margin: 0.75rem 0;
+  }
+
+  .payment-section {
+    padding: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 58%;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 0.75rem 0;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .menu-items {
+    padding: 1rem 1.5rem 2rem;
+  }
+
+  .menu-items li {
+    margin-bottom: 1.25rem;
+  }
+
+  .showcase-area {
+    height: 70vh;
+  }
+
+  .showcase-container {
+    font-size: 1.35rem;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .food-menu-container img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .menu-search input {
+    width: 100%;
+  }
+
+  .contact-img {
+    width: 100%;
+    margin: 2rem 0 0 0;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-content > div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 55%;
+  }
+
+  .auth-panel h2 {
+    font-size: 2.1rem;
+  }
+
+  .showcase-container {
+    padding: 0 1rem;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+  }
+
+  .menu-items li {
+    font-size: 1.4rem;
+  }
+
+  .food-menu-item img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 414px) {
+  .navbar-container .hamburger-lines {
+    left: 15px;
+  }
+
+  .navbar .menu-items {
+    padding-left: 40px;
+  }
+
+  .showcase-area {
+    height: 75vh;
+  }
+
+  .hero-overlay {
+    padding: 1.5rem;
+  }
+
+  .auth-hero {
+    min-height: 320px;
+  }
+
+  .auth-panel {
+    padding: 1.5rem;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  footer {
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 52%;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.55rem 1.2rem;
+  }
+
+  .menu-items li {
+    margin-bottom: 1rem;
+  }
+}
+
 @media (orientation: landscape) and (max-height: 500px) {
   .showcase-area {
     height: 50vmax;
