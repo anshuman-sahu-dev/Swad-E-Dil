@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swad-e-Dil</title>
   <link rel="icon" type="image/jpeg" href="assets/Swad-e-dil_Logo.jpg" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -15,12 +18,12 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="navbar-container container">
-      <input type="checkbox" name="" id="" />
-      <div class="hamburger-lines">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger-lines" aria-label="Toggle navigation menu">
         <span class="line line1"></span>
         <span class="line line2"></span>
         <span class="line line3"></span>
-      </div>
+      </label>
       <ul class="menu-items">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -30,6 +33,31 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <h1 class="logo">Swad-e-Dil</h1>
+      <div class="user-actions" id="user-actions">
+        <!-- Auth buttons for non-logged users -->
+        <div class="auth-actions" id="auth-actions">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="register.html" class="btn btn-primary">Register</a>
+        </div>
+        <!-- User profile and cart for logged users -->
+        <div class="user-profile" id="user-profile" style="display: none;">
+          <button id="cart-btn" class="cart-btn" aria-label="View cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count" class="cart-count">0</span>
+          </button>
+          <div class="profile-dropdown">
+            <button id="profile-btn" class="profile-btn">
+              <i class="fas fa-user"></i>
+              <span id="profile-name">User</span>
+            </button>
+            <div id="profile-menu" class="profile-menu">
+              <a href="#profile">My Profile</a>
+              <a href="#orders">My Orders</a>
+              <button id="logout-btn">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -104,83 +132,100 @@
   <!-- Food Menu Section -->
   <section id="food-menu">
     <h2 class="food-menu-heading">Food Menu</h2>
+    <div class="menu-tools container">
+      <div class="menu-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="veg">Veg</button>
+        <button class="filter-btn" data-filter="nonveg">Non-Veg</button>
+        <button class="filter-btn" data-filter="special">Special</button>
+      </div>
+      <div class="menu-search">
+        <input id="menu-search" type="search" placeholder="Search dishes by name..." />
+      </div>
+    </div>
     <div class="food-menu-container container">
 
       <!-- Royal Thali -->
-      <div class="food-menu-item">
+      <div class="food-menu-item" data-category="veg" data-name="Royal Thali Delight" data-price="350">
         <div class="food-img">
           <img src="assets/Royal Thali Delight.jpg" alt="Royal Thali Delight" />
         </div>
         <div class="food-description">
-          <h2 class="food-titile">Royal Thali Delight</h2>
+          <h2 class="food-title">Royal Thali Delight</h2>
           <p>North Indian classics butter naan, paneer butter masala, dal makhani, jeera rice, raita, salad, papad, and
             a sweet treat.</p>
           <p class="food-price">Price: &#8377; 350</p>
+          <button class="add-to-cart-btn" data-name="Royal Thali Delight" data-price="350">Add to Cart</button>
         </div>
       </div>
 
       <!-- Dakshin Bhojanam -->
-      <div class="food-menu-item">
+      <div class="food-menu-item" data-category="veg" data-name="Dakshin Bhojanam" data-price="250">
         <div class="food-img">
           <img src="assets/Dakshin Bhojanam.jpg" alt="Dakshin Bhojanam" />
         </div>
         <div class="food-description">
-          <h2 class="food-titile">Dakshin Bhojanam</h2>
+          <h2 class="food-title">Dakshin Bhojanam</h2>
           <p>A flavorful combo of dosa, medu vada, sambar, coconut chutney, tomato chutney, lemon rice, and a mini
             payasam for dessert.</p>
           <p class="food-price">Price: &#8377; 250</p>
+          <button class="add-to-cart-btn" data-name="Dakshin Bhojanam" data-price="250">Add to Cart</button>
         </div>
       </div>
 
       <!-- Seafood Platter -->
-      <div class="food-menu-item">
+      <div class="food-menu-item" data-category="nonveg" data-name="Coastal Catch – Seafood Combo Platter" data-price="400">
         <div class="food-img">
           <img src="assets/Coastal Catch – Seafood Combo Platter.jpg" alt="Seafood Platter" />
         </div>
         <div class="food-description">
-          <h2 class="food-titile">Coastal Catch – Seafood Combo Platter</h2>
+          <h2 class="food-title">Coastal Catch – Seafood Combo Platter</h2>
           <p>A seafood lover’s dream spicy prawn curry, crispy fish fry, crab masala, steamed rice, tangy chutneys, and
             sol kadhi.</p>
           <p class="food-price">Price: &#8377; 400</p>
+          <button class="add-to-cart-btn" data-name="Coastal Catch – Seafood Combo Platter" data-price="400">Add to Cart</button>
         </div>
       </div>
 
       <!-- Pakhala Bhata -->
-      <div class="food-menu-item">
+      <div class="food-menu-item" data-category="nonveg" data-name="Pakhala Bhata Traditional Platter" data-price="350">
         <div class="food-img">
           <img src="assets/Pakhala Bhata Traditional Platter.jpg" alt="Pakhala Bhata" />
         </div>
         <div class="food-description">
-          <h2 class="food-titile">Pakhala Bhata Traditional Platter</h2>
+          <h2 class="food-title">Pakhala Bhata Traditional Platter</h2>
           <p>Authentic Odia dish fermented rice (pakhala), badi chura, aloo bharta, saga bhaja, fried fish, and curd
             with green chili.</p>
           <p class="food-price">Price: &#8377; 350</p>
+          <button class="add-to-cart-btn" data-name="Pakhala Bhata Traditional Platter" data-price="350">Add to Cart</button>
         </div>
       </div>
 
       <!-- Tandoori Treat -->
-      <div class="food-menu-item">
+      <div class="food-menu-item" data-category="nonveg" data-name="Tandoori Non-Veg Treat" data-price="450">
         <div class="food-img">
           <img src="assets/Tandoori Plater.jpg" alt="Tandoori Platter" />
         </div>
         <div class="food-description">
-          <h2 class="food-titile">Tandoori Non-Veg Treat</h2>
+          <h2 class="food-title">Tandoori Non-Veg Treat</h2>
           <p>A smoky and spicy selection Tandoori chicken Biriyani, chicken tikka, prawn kebab, butter naan, green
             chutney, onion salad, and raita.</p>
           <p class="food-price">Price: &#8377; 450</p>
+          <button class="add-to-cart-btn" data-name="Tandoori Non-Veg Treat" data-price="450">Add to Cart</button>
         </div>
       </div>
 
       <!-- Veg Platter -->
-      <div class="food-menu-item">
+      <div class="food-menu-item" data-category="veg" data-name="Desi Veg Lovers’ Platter" data-price="250">
         <div class="food-img">
           <img src="assets/Desi Veg Lovers’ Platter.jpg" alt="Veg Platter" />
         </div>
         <div class="food-description">
-          <h2 class="food-titile">Desi Veg Lovers’ Platter</h2>
+          <h2 class="food-title">Desi Veg Lovers’ Platter</h2>
           <p>A complete vegetarian delight rajma, mix veg curry, puri, plain rice, salad, boondi raita, papad, and gulab
             jamun.</p>
           <p class="food-price">Price: &#8377; 250</p>
+          <button class="add-to-cart-btn" data-name="Desi Veg Lovers’ Platter" data-price="250">Add to Cart</button>
         </div>
       </div>
 
@@ -253,13 +298,61 @@
       </div>
       <div class="form-container">
         <h2>Contact Us</h2>
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="E-Mail" />
-        <textarea cols="30" rows="6" placeholder="Type Your Message"></textarea>
-        <a href="#" class="btn btn-primary">Submit</a>
+        <form id="contact-form" novalidate>
+          <input type="text" id="name" placeholder="Your Name" />
+          <input type="email" id="email" placeholder="E-Mail" />
+          <textarea id="message" cols="30" rows="6" placeholder="Type Your Message"></textarea>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
     </div>
   </section>
+
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="close-cart" class="close-btn">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <!-- Cart items will be added here -->
+      </div>
+      <div class="payment-section">
+        <h4>Payment Method</h4>
+        <div class="payment-methods">
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="card" checked>
+            <i class="fas fa-credit-card"></i>
+            <span>Credit/Debit Card</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="upi">
+            <i class="fas fa-mobile-alt"></i>
+            <span>UPI</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="cod">
+            <i class="fas fa-money-bill-wave"></i>
+            <span>Cash on Delivery</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="wallet">
+            <i class="fas fa-wallet"></i>
+            <span>Digital Wallet</span>
+          </label>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <p>Total: <span id="cart-total">₹0</span></p>
+        <button id="checkout-btn" class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast-message hidden"></div>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <!-- Footer Section -->
   <footer>
@@ -292,27 +385,7 @@
     <p>&copy; 2026 WanderFramez_. All rights reserved.</p>
   </footer>
 
-  <!-- JS Code for smooth scrolling -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("a").on("click", function (event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $("html, body").animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            800,
-            function () {
-              window.location.hash = hash;
-            }
-          );
-        }
-      });
-    });
-  </script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>

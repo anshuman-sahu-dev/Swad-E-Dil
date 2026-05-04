@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Swad-e-Dil</title>
+  <link rel="icon" type="image/jpeg" href="assets/Swad-e-dil_Logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger-lines" aria-label="Toggle navigation menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </label>
+      <ul class="menu-items">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#food-menu">Menu</a></li>
+        <li><a href="#orders">Orders</a></li>
+      </ul>
+      <div class="auth-actions">
+        <button id="logout-button" class="btn btn-secondary">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="dashboard-page" id="dashboard">
+    <div class="dashboard-container container">
+      <div class="dashboard-header">
+        <div>
+          <p class="small">Welcome back</p>
+          <h1 id="dashboard-username">Customer</h1>
+          <p>Here’s a quick look at your favorites and latest updates.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="dashboard-card">
+          <h3>My Recent Orders</h3>
+          <ul>
+            <li>Royal Thali Delight — Delivered</li>
+            <li>Desi Veg Lovers’ Platter — In kitchen</li>
+            <li>Tandoori Non-Veg Treat — Delivered</li>
+          </ul>
+        </article>
+
+        <article class="dashboard-card">
+          <h3>Saved Favorites</h3>
+          <ul>
+            <li>Coastal Catch – Seafood Combo Platter</li>
+            <li>Dakshin Bhojanam</li>
+            <li>Royal Thali Delight</li>
+          </ul>
+        </article>
+
+        <article class="dashboard-card">
+          <h3>Recommended For You</h3>
+          <p>Try our new season special mutton curry with saffron rice for authentic flavor.</p>
+        </article>
+
+        <article class="dashboard-card">
+          <h3>Account Summary</h3>
+          <p id="dashboard-email">Email: user@example.com</p>
+          <p>Member since: 2026</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="contact-us">
+        <h4>Contact Us</h4><br />
+        <p>Email: swad-e-dil@gmail.com</p><br />
+        <p>Phone: +91 7854939308</p><br />
+        <p>Address: Brehmapur, Ganjam, Odisha</p>
+      </div>
+      <div class="quick-links">
+        <h4>Quick Links</h4><br />
+        <ul class="footer-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#food-menu">Menu</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </div>
+      <div class="social-links">
+        <h4>Follow Us</h4><br />
+        <a href="https://facebook.com" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.whatsapp.com/" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <p>&copy; 2026 Swad-e-Dil. All rights reserved.</p>
+  </footer>
+
+  <div id="toast" class="toast-message hidden"></div>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>

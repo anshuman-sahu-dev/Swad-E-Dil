@@ -54,26 +54,47 @@ The project has been live for **5 years**, serving both loyal customers and firs
 | Technology | Purpose |
 |---|---|
 | **HTML5** | Page structure and semantic markup |
-| **CSS3** | Custom styling and animations |
-| **Bootstrap 5** | Responsive grid, components, and layout |
-| **JavaScript** | Interactivity and dynamic behavior |
-| **Canva** | All visual designs — banners, posters, and graphics |
-| **Vercel** | Hosting and deployment |
+| **CSS3** | Custom styling, responsive layout, and page states |
+| **JavaScript** | Client-side behavior, auth flow, and page routing |
+| **Canva** | Visual asset creation for banners and imagery |
 
 ---
 
 ## 📄 Pages & Sections
 
-The website is a **single-page application (SPA)** with smooth scroll navigation across the following sections:
+This project has grown into a multi-page restaurant experience with core customer features:
 
 ```
-/ (index.html)
-├── #home          → Hero / Landing Section
-├── #about         → About the Restaurant
-├── #food          → Food Categories (Veg / Non-Veg / Special Thali)
-├── #food-menu     → Full Menu with Prices
-├── #testimonials  → Customer Reviews
-└── #contact       → Contact Form & Details
+/ (index.html)            # Main marketing and menu site
+/ login.html              # Customer login page
+/ register.html           # Customer registration page
+/ user.html               # Member dashboard with order and profile summary
+```
+
+### Main website sections
+- `#home` — Hero landing and call-to-action
+- `#about` — Brand story and values
+- `#food` — Food category showcase
+- `#food-menu` — Featured menu items with pricing
+- `#testimonials` — Customer social proof
+- `#contact` — Contact form and restaurant details
+
+---
+
+## 📁 Project Structure
+
+```
+swad-e-dil/
+├── index.html
+├── login.html
+├── register.html
+├── user.html
+├── README.md
+├── assets/                 # All image and media files
+├── css/
+│   └── style.css          # Main stylesheet
+└── js/
+    └── main.js            # Front-end logic and auth handling
 ```
 
 ---

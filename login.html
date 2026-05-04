@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Swad-e-Dil</title>
+  <link rel="icon" type="image/jpeg" href="assets/Swad-e-dil_Logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger-lines" aria-label="Toggle navigation menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </label>
+      <ul class="menu-items">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#food-menu">Menu</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <h1 class="logo">Swad-e-Dil</h1>
+    </div>
+  </nav>
+
+  <section class="auth-page">
+    <div class="auth-container container">
+      <div class="auth-layout">
+        <div class="auth-hero">
+          <img src="assets/portfolio banner.jpg" alt="Swad-e-Dil food presentation" />
+          <div class="hero-overlay">
+            <p>Welcome back</p>
+            <h2>Login to Swad-e-Dil</h2>
+            <p>Sign in to access your orders, favorites, and personalized meal recommendations.</p>
+          </div>
+        </div>
+        <div class="auth-panel">
+          <h2>Login</h2>
+          <p class="form-subtitle">Enter your registered email and password to continue.</p>
+          <form id="login-form" novalidate>
+            <input type="email" id="login-email" placeholder="Email address" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <p class="auth-footer">New here? <a href="register.html">Create an account</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast-message hidden"></div>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
