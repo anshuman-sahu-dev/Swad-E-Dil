@@ -20,12 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartTotal = document.getElementById("cart-total");
   const cartCount = document.getElementById("cart-count");
   const checkoutBtn = document.getElementById("checkout-btn");
-  const profileBtn = document.getElementById("profile-btn");
-  const profileMenu = document.getElementById("profile-menu");
-  const profileName = document.getElementById("profile-name");
-  const logoutBtn = document.getElementById("logout-btn");
+  const navProfile = document.getElementById("nav-profile");
+  const profileIconBtn = document.getElementById("profile-icon-btn");
+  const profileIconInitials = document.getElementById("profile-icon-initials");
+  const profilePanel = document.getElementById("profile-panel");
+  const closeProfilePanel = document.getElementById("close-profile-panel");
+  const panelProfileName = document.getElementById("panel-profile-name");
+  const panelProfileEmail = document.getElementById("panel-profile-email");
+  const panelProfileInitials = document.getElementById("panel-profile-initials");
+  const profileOrderCount = document.getElementById("profile-order-count");
+  const profileLogoutBtn = document.getElementById("profile-logout-btn");
   const authActions = document.getElementById("auth-actions");
-  const userProfile = document.getElementById("user-profile");
 
   function closeMenu() {
     if (menuToggle && menuToggle.checked) {
@@ -153,16 +158,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateNavbar() {
     const loggedUser = getLoggedUser();
-    if (authActions && userProfile) {
+    if (authActions) {
       if (loggedUser) {
         authActions.style.display = "none";
-        userProfile.style.display = "flex";
-        if (profileName) {
-          profileName.textContent = loggedUser.name || "User";
+        if (navProfile) {
+          navProfile.style.display = "flex";
+        }
+        if (panelProfileName) {
+          panelProfileName.textContent = loggedUser.name || "User";
+        }
+        if (panelProfileEmail) {
+          panelProfileEmail.textContent = loggedUser.email || "user@example.com";
+        }
+        if (panelProfileInitials) {
+          panelProfileInitials.textContent = (loggedUser.name || "U").trim().charAt(0).toUpperCase();
+        }
+        if (profileIconInitials) {
+          profileIconInitials.textContent = (loggedUser.name || "U").trim().charAt(0).toUpperCase();
         }
       } else {
         authActions.style.display = "flex";
-        userProfile.style.display = "none";
+        if (navProfile) {
+          navProfile.style.display = "none";
+        }
       }
     }
   }
@@ -206,6 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       if (cartTotal) cartTotal.textContent = `₹${total}`;
       if (cartCount) cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+      if (profileOrderCount) profileOrderCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
     }
   }
 
@@ -325,27 +344,36 @@ document.addEventListener("DOMContentLoaded", function () {
     if (cartModal) cartModal.style.display = "none";
   }
 
-  // Profile dropdown
-  if (profileBtn) {
-    profileBtn.addEventListener("click", function() {
-      if (profileMenu) {
-        profileMenu.style.display = profileMenu.style.display === "block" ? "none" : "block";
+  // Profile panel
+  if (profileIconBtn) {
+    profileIconBtn.addEventListener("click", function() {
+      if (profilePanel) {
+        profilePanel.classList.remove("hidden");
       }
     });
   }
 
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", function() {
+  if (closeProfilePanel) {
+    closeProfilePanel.addEventListener("click", function() {
+      if (profilePanel) {
+        profilePanel.classList.add("hidden");
+      }
+    });
+  }
+
+  if (profileLogoutBtn) {
+    profileLogoutBtn.addEventListener("click", function() {
       logout();
     });
   }
 
-  // Close profile menu when clicking outside
-  document.addEventListener("click", function(e) {
-    if (profileMenu && !profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
-      profileMenu.style.display = "none";
-    }
-  });
+  if (profilePanel) {
+    profilePanel.addEventListener("click", function(e) {
+      if (e.target === profilePanel) {
+        profilePanel.classList.add("hidden");
+      }
+    });
+  }
 
   updateCartDisplay();
 

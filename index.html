@@ -31,6 +31,9 @@
         <li><a href="#food-menu">Menu</a></li>
         <li><a href="#testimonials">Testimonial</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="nav-profile" id="nav-profile" style="display:none;">
+          <button id="profile-icon-btn" class="profile-icon" aria-label="Open profile"><span id="profile-icon-initials">U</span></button>
+        </li>
       </ul>
       <h1 class="logo">Swad-e-Dil</h1>
       <div class="user-actions" id="user-actions">
@@ -39,30 +42,17 @@
           <a href="login.html" class="btn btn-secondary">Login</a>
           <a href="register.html" class="btn btn-primary">Register</a>
         </div>
-        <!-- User profile and cart for logged users -->
-        <div class="user-profile" id="user-profile" style="display: none;">
-          <button id="cart-btn" class="cart-btn" aria-label="View cart">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count" class="cart-count">0</span>
-          </button>
-          <div class="profile-dropdown">
-            <button id="profile-btn" class="profile-btn">
-              <i class="fas fa-user"></i>
-              <span id="profile-name">User</span>
-            </button>
-            <div id="profile-menu" class="profile-menu">
-              <a href="#profile">My Profile</a>
-              <a href="#orders">My Orders</a>
-              <button id="logout-btn">Logout</button>
-            </div>
-          </div>
-        </div>
+        <button id="cart-btn" class="cart-btn" aria-label="View cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- Showcase Section -->
   <section class="showcase-area" id="home">
+    <img class="showcase-bg" src="assets/cover photo.jpg" alt="Cover photo" />
     <div class="showcase-container">
       <h1 class="main-title">Swaad ka safar, parampara ke sang.</h1>
       <p>Authentic taste made with heart served with health.</p>
@@ -85,7 +75,7 @@
         </p>
       </div>
       <div class="about-img">
-        <img src="assets/Swad-e-dil_poster.jpg" alt="food" />
+        <img src="assets/cover photo.jpg" alt="food" />
       </div>
     </div>
   </section>
@@ -307,6 +297,47 @@
       </div>
     </div>
   </section>
+
+  <div id="profile-panel" class="profile-panel hidden">
+    <div class="profile-panel-card">
+      <button id="close-profile-panel" class="close-btn profile-close">&times;</button>
+      <div class="profile-panel-header">
+        <div class="profile-avatar">
+          <span id="panel-profile-initials">U</span>
+        </div>
+        <div>
+          <h3 id="panel-profile-name">User Name</h3>
+          <p id="panel-profile-email">user@example.com</p>
+        </div>
+      </div>
+      <div class="profile-panel-body">
+        <p class="profile-panel-intro">Welcome back! Manage your account, view recent orders, and update your settings here.</p>
+        <div class="profile-stats">
+          <div>
+            <strong id="profile-order-count">0</strong>
+            <span>Orders</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>Favorites</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Rewards</span>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <a href="user.html" class="btn btn-secondary">Dashboard</a>
+          <button id="profile-logout-btn" class="btn btn-primary">Logout</button>
+        </div>
+        <div class="profile-links">
+          <a href="#orders"><i class="fas fa-box"></i> My Orders</a>
+          <a href="#contact"><i class="fas fa-map-marker-alt"></i> Delivery Address</a>
+          <a href="#contact"><i class="fas fa-phone"></i> Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="cart-modal" class="cart-modal">
     <div class="cart-content">

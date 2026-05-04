@@ -414,6 +414,149 @@ body {
   overflow-y: auto;
 }
 
+.profile-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #117964;
+  background: #117964;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.profile-icon span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+}
+
+.profile-panel {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1100;
+  padding: 1rem;
+}
+
+.profile-panel.hidden {
+  display: none;
+}
+
+.profile-panel-card {
+  width: min(460px, 100%);
+  background: #fff;
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.profile-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  font-size: 1.8rem;
+  color: #666;
+}
+
+.profile-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.profile-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #117964;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.profile-panel-header h3 {
+  margin-bottom: 0.25rem;
+}
+
+.profile-panel-header p {
+  color: #666;
+}
+
+.profile-panel-intro {
+  margin-bottom: 1.5rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-stats div {
+  background: #f7fbf7;
+  border-radius: 18px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.profile-stats strong {
+  display: block;
+  font-size: 1.4rem;
+  color: #117964;
+  margin-bottom: 0.25rem;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.profile-links {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1rem;
+  border: 1px solid #e3e3e3;
+  border-radius: 16px;
+  color: #444;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.profile-links a:hover {
+  background: #f9fff9;
+  border-color: #cde8d6;
+}
+
+.profile-links i {
+  color: #117964;
+}
+
 .cart-header {
   display: flex;
   justify-content: space-between;
@@ -622,13 +765,25 @@ body {
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  height: 64px;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-height: 64px;
 }
 
 .menu-items {
   order: 2;
   display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .menu-items li {
@@ -657,16 +812,27 @@ body {
 
 /* SHOWCASE SITE */
 .showcase-area {
+  position: relative;
   height: 50vh;
   background: linear-gradient(rgba(240, 240, 240, 0.144),
-      rgba(255, 255, 255, 0.336)),
-    url("assets/cover\ photo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+      rgba(255, 255, 255, 0.336));
+  overflow: hidden;
+}
+
+.showcase-area .showcase-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  opacity: 0.35;
 }
 
 .showcase-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1165,10 +1331,33 @@ a.whatsapp i {
   .navbar input[type="checkbox"],
   .navbar .hamburger-lines {
     display: block;
+    z-index: 20;
   }
 
   .navbar-container {
     justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 64px;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo {
+    order: 2;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .user-actions {
+    order: 3;
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+  }
+
+  .auth-actions {
+    width: auto;
+    gap: 0.6rem;
   }
 
   .menu-items {
@@ -1180,9 +1369,9 @@ a.whatsapp i {
     background: #fff;
     padding: 2rem 1.5rem;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
-    z-index: 10;
+    z-index: 15;
   }
 
   .menu-items li {
@@ -1242,9 +1431,33 @@ a.whatsapp:hover i {
   }
 
   .navbar-container {
-    display: block;
+    display: flex;
     position: relative;
-    height: 64px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    padding: 0.75rem 1rem;
+  }
+
+  .user-actions {
+    order: 3;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .auth-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .auth-actions a {
+    font-size: 1rem;
+    padding: 0.55rem 1rem;
   }
 
   .navbar-container input[type="checkbox"] {
@@ -1303,6 +1516,7 @@ a.whatsapp:hover i {
     padding-left: 50px;
     transition: transform 0.5s ease-in-out;
     box-shadow: 5px 0px 10px 0px #aaa;
+    z-index: 15;
   }
 
   .navbar .menu-items li {
@@ -1312,9 +1526,9 @@ a.whatsapp:hover i {
   }
 
   .logo {
-    position: absolute;
-    top: 5px;
-    right: 15px;
+    position: relative;
+    order: 2;
+    margin: 0 auto;
     font-size: 2rem;
   }
 
