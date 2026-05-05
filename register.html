@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register | Swad-e-Dil</title>
+  <title>Sign Up | Swad-e-Dil</title>
+  <meta name="description" content="Create your Swad-e-Dil account to start ordering delicious meals." />
   <link rel="icon" type="image/jpeg" href="assets/Swad-e-dil_Logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,12 +25,7 @@
         <span class="line line2"></span>
         <span class="line line3"></span>
       </label>
-      <ul class="menu-items">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#food-menu">Menu</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
+      <ul class="menu-items"></ul>
       <h1 class="logo">Swad-e-Dil</h1>
       <div class="user-actions">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -39,35 +35,112 @@
     </div>
   </nav>
 
-  <section class="auth-page">
-    <div class="auth-container container">
-      <div class="auth-layout">
-        <div class="auth-hero">
-          <img src="assets/portfolio banner.jpg" alt="Swad-e-Dil register image" />
-          <div class="hero-overlay">
-            <p>Join our family</p>
-            <h2>Create your account</h2>
-            <p>Register now to save favorites, track your orders, and enjoy faster checkout.</p>
-          </div>
-        </div>
-        <div class="auth-panel">
-          <h2>Register</h2>
-          <p class="form-subtitle">Create a new account to begin ordering delicious meals.</p>
-          <form id="register-form" novalidate>
-            <input type="text" id="register-name" placeholder="Your Name" required />
-            <input type="email" id="register-email" placeholder="Email address" required />
-            <input type="password" id="register-password" placeholder="Password" required />
-            <input type="password" id="register-password-confirm" placeholder="Confirm password" required />
-            <button type="submit" class="btn btn-primary">Register</button>
-          </form>
-          <p class="auth-footer">Already have an account? <a href="login.html">Login here</a></p>
-        </div>
+  <section class="register-page">
+    <div class="register-container container">
+
+      <!-- Left: Poster Image -->
+      <div class="register-poster">
+        <img src="assets/Swad-e-dil_poster.jpg" alt="Swad-e-Dil poster" />
       </div>
+
+      <!-- Right: Form -->
+      <div class="register-panel">
+        <div class="register-header">
+          <h2>Create Account</h2>
+          <p class="form-subtitle">Join Swad-e-Dil and start your flavorful journey.</p>
+        </div>
+
+        <form id="register-form" novalidate autocomplete="off">
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="register-name"><i class="fas fa-user"></i> Full Name</label>
+            <input type="text" id="register-name" placeholder="Enter your full name" required />
+          </div>
+
+          <!-- Gender -->
+          <div class="form-group">
+            <label><i class="fas fa-venus-mars"></i> Gender</label>
+            <div class="gender-options">
+              <label class="gender-option">
+                <input type="radio" name="gender" value="male" required />
+                <span><i class="fas fa-mars"></i> Male</span>
+              </label>
+              <label class="gender-option">
+                <input type="radio" name="gender" value="female" />
+                <span><i class="fas fa-venus"></i> Female</span>
+              </label>
+              <label class="gender-option">
+                <input type="radio" name="gender" value="other" />
+                <span><i class="fas fa-genderless"></i> Other</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Phone Number + Get OTP -->
+          <div class="form-group">
+            <label for="register-phone"><i class="fas fa-phone"></i> Phone Number</label>
+            <div class="input-group">
+              <input type="tel" id="register-phone" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[0-9]{10}" required />
+              <button type="button" id="get-otp-btn" class="btn-otp">Get OTP</button>
+            </div>
+          </div>
+
+          <!-- OTP Input (hidden initially) -->
+          <div class="form-group" id="otp-group" style="display: none;">
+            <label for="register-otp"><i class="fas fa-key"></i> Enter OTP</label>
+            <div class="input-group">
+              <input type="text" id="register-otp" placeholder="Enter 4-digit OTP" maxlength="4" pattern="[0-9]{4}" />
+              <button type="button" id="verify-otp-btn" class="btn-otp">Verify</button>
+            </div>
+            <span id="otp-status" class="otp-status"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="register-email"><i class="fas fa-envelope"></i> Email Address</label>
+            <input type="email" id="register-email" placeholder="Enter your email address" required />
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="register-password"><i class="fas fa-lock"></i> Password</label>
+            <div class="input-group">
+              <input type="password" id="register-password" placeholder="Create a password" required />
+              <button type="button" class="btn-eye" id="toggle-password" aria-label="Show/hide password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span id="password-error" class="field-error"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="register-password-confirm"><i class="fas fa-lock"></i> Confirm Password</label>
+            <div class="input-group">
+              <input type="password" id="register-password-confirm" placeholder="Re-enter your password" required />
+              <button type="button" class="btn-eye" id="toggle-confirm-password" aria-label="Show/hide password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span id="confirm-error" class="field-error"></span>
+          </div>
+
+          <!-- Register Button -->
+          <button type="submit" class="btn btn-primary register-submit-btn" id="register-submit">
+            <i class="fas fa-user-plus"></i> Register
+          </button>
+        </form>
+
+        <p class="auth-footer">Already have an account? <a href="login.html">Sign In</a></p>
+      </div>
+
     </div>
   </section>
 
   <div id="toast" class="toast-message hidden"></div>
   <script src="js/app.js" defer></script>
+  <script src="js/register.js" defer></script>
 </body>
 
 </html>

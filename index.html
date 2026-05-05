@@ -19,30 +19,16 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="navbar-container container">
+      <!-- Mobile hamburger -->
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="hamburger-lines" aria-label="Toggle navigation menu">
         <span class="line line1"></span>
         <span class="line line2"></span>
         <span class="line line3"></span>
       </label>
-      <ul class="menu-items">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#food">Category</a></li>
-        <li><a href="#food-menu">Menu</a></li>
-        <li><a href="#testimonials">Testimonial</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="nav-profile" id="nav-profile" style="display:none;">
-          <button id="profile-icon-btn" class="profile-icon" aria-label="Open profile"><span id="profile-icon-initials">U</span></button>
-        </li>
-      </ul>
-      <h1 class="logo">Swad-e-Dil</h1>
-      <div class="user-actions" id="user-actions">
-        <!-- Auth buttons for non-logged users -->
-        <div class="auth-actions" id="auth-actions">
-          <a href="login.html" class="btn btn-secondary">Login</a>
-          <a href="register.html" class="btn btn-primary">Register</a>
-        </div>
+
+      <!-- LEFT: Toggler + Cart + Logo -->
+      <div class="nav-left">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
           <i class="fas fa-moon"></i>
         </button>
@@ -50,6 +36,30 @@
           <i class="fas fa-shopping-cart"></i>
           <span id="cart-count" class="cart-count">0</span>
         </button>
+        <h1 class="logo">Swad-e-Dil</h1>
+      </div>
+
+      <!-- CENTER: Nav Links -->
+      <ul class="menu-items">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#food">Category</a></li>
+        <li><a href="#food-menu">Menu</a></li>
+        <li><a href="#testimonials">Testimonial</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- RIGHT: Sign In/Up (logged out) OR Profile (logged in) -->
+      <div class="nav-right" id="user-actions">
+        <div class="auth-actions" id="auth-actions">
+          <a href="login.html" class="btn btn-secondary">Sign In</a>
+          <a href="register.html" class="btn btn-primary">Sign Up</a>
+        </div>
+        <div class="nav-profile" id="nav-profile" style="display:none;">
+          <button id="profile-icon-btn" class="profile-icon" aria-label="Open profile">
+            <span id="profile-icon-initials">U</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -84,44 +94,80 @@
     </div>
   </section>
 
-  <!-- Food Section -->
+  <!-- Category Section -->
   <section id="food">
-    <h2>Types of food</h2>
-    <div class="food-container container">
-      <div class="food-type veg">
-        <div class="img-container">
-          <img src="assets/Veg menu dp.jpg" alt="Veg Menu" />
-          <div class="img-content">
+    <div class="category-section container">
+      <h2 class="section-title">Types of Food</h2>
+
+      <div class="category-grid">
+
+        <!-- Breakfast (image & link to be added later) -->
+        <div class="category-card breakfast">
+          <div class="category-img-wrap">
+            <img src="assets/breakfast dp.jpg" alt="Breakfast" onerror="this.src='assets/cover photo.jpg'" />
+            <div class="category-overlay">
+              <span class="category-tag">Breakfast</span>
+            </div>
+          </div>
+          <div class="category-info">
+            <h3>Breakfast</h3>
+            <p>Start your day with our fresh, wholesome morning meals.</p>
+            <a href="#" class="btn btn-primary category-btn" id="breakfast-menu-link" target="_blank">Menu Card</a>
+          </div>
+        </div>
+
+        <!-- Veg -->
+        <div class="category-card veg">
+          <div class="category-img-wrap">
+            <img src="assets/Veg menu dp.jpg" alt="Veg Menu" />
+            <div class="category-overlay">
+              <span class="category-tag veg-tag">Veg</span>
+            </div>
+          </div>
+          <div class="category-info">
             <h3>Veg</h3>
+            <p>Pure vegetarian delights crafted with fresh seasonal ingredients.</p>
             <a href="https://drive.google.com/file/d/1bR8S2FaD3KRVfQExx79pWzkUYPi7qUQe/view?usp=sharing"
-              class="btn btn-primary" target="_blank">Menu Card</a>
+              class="btn btn-primary category-btn" target="_blank">Menu Card</a>
           </div>
         </div>
-      </div>
 
-      <div class="food-type nonveg">
-        <div class="img-container">
-          <img src="assets/nonveg menu dp.jpg" alt="Non-Veg Menu" />
-          <div class="img-content">
-            <h3>Non-veg</h3>
+        <!-- Non-Veg -->
+        <div class="category-card nonveg">
+          <div class="category-img-wrap">
+            <img src="assets/nonveg menu dp.jpg" alt="Non-Veg Menu" />
+            <div class="category-overlay">
+              <span class="category-tag nonveg-tag">Non-Veg</span>
+            </div>
+          </div>
+          <div class="category-info">
+            <h3>Non-Veg</h3>
+            <p>Rich, hearty non-veg dishes bursting with authentic spices.</p>
             <a href="https://drive.google.com/file/d/1bNpZcHbxneMgGbOck1-NN8d09URaHm6_/view?usp=sharing"
-              class="btn btn-primary" target="_blank">Menu Card</a>
+              class="btn btn-primary category-btn" target="_blank">Menu Card</a>
           </div>
         </div>
-      </div>
 
-      <div class="food-type special thali">
-        <div class="img-container">
-          <img src="assets/st dp.jpg" alt="Special Thali" />
-          <div class="img-content">
+        <!-- Special Thali -->
+        <div class="category-card thali">
+          <div class="category-img-wrap">
+            <img src="assets/st dp.jpg" alt="Special Thali" />
+            <div class="category-overlay">
+              <span class="category-tag thali-tag">Special</span>
+            </div>
+          </div>
+          <div class="category-info">
             <h3>Special Thali</h3>
+            <p>A grand platter of curated dishes — the true desi experience.</p>
             <a href="https://drive.google.com/file/d/1bSysFsWe7Es9tzMRBfLXLfLkdR8TqFGv/view?usp=sharing"
-              class="btn btn-primary" target="_blank">Menu Card</a>
+              class="btn btn-primary category-btn" target="_blank">Menu Card</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- Food Menu Section -->
   <section id="food-menu">
