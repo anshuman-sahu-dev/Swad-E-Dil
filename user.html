@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -29,6 +30,9 @@
         <li><a href="#orders">Orders</a></li>
       </ul>
       <div class="auth-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
         <button id="logout-button" class="btn btn-secondary">Logout</button>
       </div>
     </div>
@@ -40,14 +44,33 @@
         <div>
           <p class="small">Welcome back</p>
           <h1 id="dashboard-username">Customer</h1>
-          <p>Here’s a quick look at your favorites and latest updates.</p>
+          <p>Track your orders, favorites, and account details in one place.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <h4>Orders Placed</h4>
+          <p id="orders-count">0</p>
+        </div>
+        <div class="stat-card">
+          <h4>Favorites Saved</h4>
+          <p id="favorites-count">0</p>
+        </div>
+        <div class="stat-card">
+          <h4>Active Order</h4>
+          <p id="active-order-status">No active orders</p>
+        </div>
+        <div class="stat-card">
+          <h4>Member Since</h4>
+          <p id="member-since">2026</p>
         </div>
       </div>
 
       <div class="dashboard-grid">
         <article class="dashboard-card">
           <h3>My Recent Orders</h3>
-          <ul>
+          <ul id="order-history-list">
             <li>Royal Thali Delight — Delivered</li>
             <li>Desi Veg Lovers’ Platter — In kitchen</li>
             <li>Tandoori Non-Veg Treat — Delivered</li>
@@ -56,7 +79,7 @@
 
         <article class="dashboard-card">
           <h3>Saved Favorites</h3>
-          <ul>
+          <ul id="favorites-list">
             <li>Coastal Catch – Seafood Combo Platter</li>
             <li>Dakshin Bhojanam</li>
             <li>Royal Thali Delight</li>
@@ -105,7 +128,8 @@
   </footer>
 
   <div id="toast" class="toast-message hidden"></div>
-  <script src="js/main.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
 </body>
 
 </html>

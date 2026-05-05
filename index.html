@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -42,6 +43,9 @@
           <a href="login.html" class="btn btn-secondary">Login</a>
           <a href="register.html" class="btn btn-primary">Register</a>
         </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
         <button id="cart-btn" class="cart-btn" aria-label="View cart">
           <i class="fas fa-shopping-cart"></i>
           <span id="cart-count" class="cart-count">0</span>
@@ -145,7 +149,12 @@
           <p>North Indian classics butter naan, paneer butter masala, dal makhani, jeera rice, raita, salad, papad, and
             a sweet treat.</p>
           <p class="food-price">Price: &#8377; 350</p>
-          <button class="add-to-cart-btn" data-name="Royal Thali Delight" data-price="350">Add to Cart</button>
+          <div class="food-actions">
+            <button class="favorite-btn" data-name="Royal Thali Delight" data-price="350" aria-label="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button class="add-to-cart-btn" data-name="Royal Thali Delight" data-price="350">Add to Cart</button>
+          </div>
         </div>
       </div>
 
@@ -159,7 +168,12 @@
           <p>A flavorful combo of dosa, medu vada, sambar, coconut chutney, tomato chutney, lemon rice, and a mini
             payasam for dessert.</p>
           <p class="food-price">Price: &#8377; 250</p>
-          <button class="add-to-cart-btn" data-name="Dakshin Bhojanam" data-price="250">Add to Cart</button>
+          <div class="food-actions">
+            <button class="favorite-btn" data-name="Dakshin Bhojanam" data-price="250" aria-label="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button class="add-to-cart-btn" data-name="Dakshin Bhojanam" data-price="250">Add to Cart</button>
+          </div>
         </div>
       </div>
 
@@ -173,7 +187,12 @@
           <p>A seafood lover’s dream spicy prawn curry, crispy fish fry, crab masala, steamed rice, tangy chutneys, and
             sol kadhi.</p>
           <p class="food-price">Price: &#8377; 400</p>
-          <button class="add-to-cart-btn" data-name="Coastal Catch – Seafood Combo Platter" data-price="400">Add to Cart</button>
+          <div class="food-actions">
+            <button class="favorite-btn" data-name="Coastal Catch – Seafood Combo Platter" data-price="400" aria-label="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button class="add-to-cart-btn" data-name="Coastal Catch – Seafood Combo Platter" data-price="400">Add to Cart</button>
+          </div>
         </div>
       </div>
 
@@ -187,7 +206,12 @@
           <p>Authentic Odia dish fermented rice (pakhala), badi chura, aloo bharta, saga bhaja, fried fish, and curd
             with green chili.</p>
           <p class="food-price">Price: &#8377; 350</p>
-          <button class="add-to-cart-btn" data-name="Pakhala Bhata Traditional Platter" data-price="350">Add to Cart</button>
+          <div class="food-actions">
+            <button class="favorite-btn" data-name="Pakhala Bhata Traditional Platter" data-price="350" aria-label="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button class="add-to-cart-btn" data-name="Pakhala Bhata Traditional Platter" data-price="350">Add to Cart</button>
+          </div>
         </div>
       </div>
 
@@ -201,7 +225,12 @@
           <p>A smoky and spicy selection Tandoori chicken Biriyani, chicken tikka, prawn kebab, butter naan, green
             chutney, onion salad, and raita.</p>
           <p class="food-price">Price: &#8377; 450</p>
-          <button class="add-to-cart-btn" data-name="Tandoori Non-Veg Treat" data-price="450">Add to Cart</button>
+          <div class="food-actions">
+            <button class="favorite-btn" data-name="Tandoori Non-Veg Treat" data-price="450" aria-label="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button class="add-to-cart-btn" data-name="Tandoori Non-Veg Treat" data-price="450">Add to Cart</button>
+          </div>
         </div>
       </div>
 
@@ -215,7 +244,12 @@
           <p>A complete vegetarian delight rajma, mix veg curry, puri, plain rice, salad, boondi raita, papad, and gulab
             jamun.</p>
           <p class="food-price">Price: &#8377; 250</p>
-          <button class="add-to-cart-btn" data-name="Desi Veg Lovers’ Platter" data-price="250">Add to Cart</button>
+          <div class="food-actions">
+            <button class="favorite-btn" data-name="Desi Veg Lovers’ Platter" data-price="250" aria-label="Add to favorites">
+              <i class="far fa-heart"></i>
+            </button>
+            <button class="add-to-cart-btn" data-name="Desi Veg Lovers’ Platter" data-price="250">Add to Cart</button>
+          </div>
         </div>
       </div>
 
@@ -416,7 +450,7 @@
     <p>&copy; 2026 WanderFramez_. All rights reserved.</p>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 
 </html>
