@@ -61,7 +61,7 @@
   }
 }
 @media (max-width: 1024px) {
-  .food-menu-container img {
+  .legacy-food-menu img {
     max-width: 320px;
   }
 }
@@ -295,11 +295,11 @@
     text-align: center;
   }
 
-  .food-menu-container img {
+  .legacy-food-menu img {
     margin: auto;
   }
 
-  .food-menu-item {
+  .legacy-food-menu .food-menu-item {
     flex-direction: column;
     text-align: center;
   }
@@ -387,28 +387,23 @@
     gap: 1.5rem;
   }
 
-  .food-menu-item {
+  .legacy-food-menu .food-menu-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .food-menu-container img {
+  .legacy-food-menu img {
     width: 220px;
     height: 220px;
   }
 
-  .food-description {
+  .legacy-food-menu .food-description {
     margin: 1rem 0 0 0;
   }
 
   .menu-tools {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .menu-search input {
-    width: 100%;
+    align-items: center;
   }
 
   .testimonial-container {
@@ -459,7 +454,7 @@
     font-size: 2.4rem;
   }
 
-  .food-menu-item img {
+  .legacy-food-menu .food-menu-item img {
     width: 180px;
     height: 180px;
   }
@@ -518,13 +513,9 @@
     font-size: 1.8rem;
   }
 
-  .food-menu-container img {
+  .legacy-food-menu img {
     width: 180px;
     height: 180px;
-  }
-
-  .menu-search input {
-    width: 100%;
   }
 
   .contact-img {
@@ -561,7 +552,7 @@
     font-size: 1.4rem;
   }
 
-  .food-menu-item img {
+  .legacy-food-menu .food-menu-item img {
     width: 160px;
     height: 160px;
   }
@@ -616,6 +607,66 @@
 
   .menu-items li {
     margin-bottom: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .food-menu-container,
+  .menu-popup-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .food-menu-container,
+  .menu-popup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-popup-content {
+    padding: 1.75rem;
+  }
+}
+@media (max-width: 600px) {
+  .food-menu-heading {
+    font-size: 2.8rem;
+  }
+
+  .food-menu-subtitle,
+  .menu-popup-summary {
+    font-size: 1.3rem;
+  }
+
+  .food-menu-image {
+    height: 220px;
+  }
+
+  .food-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .food-actions {
+    width: 100%;
+  }
+
+  .add-to-cart-btn {
+    flex: 1;
+  }
+
+  .menu-more-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .menu-popup-header {
+    flex-direction: column;
+  }
+
+  .menu-popup-options {
+    gap: 0.6rem;
+  }
+
+  .menu-popup-option {
+    width: 100%;
   }
 }
 @media (orientation: landscape) and (max-height: 500px) {

@@ -171,19 +171,29 @@
 
   <!-- Food Menu Section -->
   <section id="food-menu">
-    <h2 class="food-menu-heading">Food Menu</h2>
-    <div class="menu-tools container">
-      <div class="menu-filter">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="veg">Veg</button>
-        <button class="filter-btn" data-filter="nonveg">Non-Veg</button>
-        <button class="filter-btn" data-filter="special">Special</button>
+    <div class="container">
+      <h2 class="food-menu-heading">Food Menu</h2>
+      <p class="food-menu-subtitle">Browse our featured breakfast, veg, nonveg, and special thali picks.</p>
+      <div class="menu-tools">
+        <div class="menu-filter" role="tablist" aria-label="Food menu categories">
+          <button class="filter-btn active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="breakfast" type="button">Breakfast</button>
+          <button class="filter-btn" data-filter="veg" type="button">Veg</button>
+          <button class="filter-btn" data-filter="nonveg" type="button">Nonveg</button>
+          <button class="filter-btn" data-filter="special-thali" type="button">Special Thali</button>
+        </div>
       </div>
-      <div class="menu-search">
-        <input id="menu-search" type="search" placeholder="Search dishes by name..." />
+      <div id="food-menu-container" class="food-menu-container" aria-live="polite">
+        <!-- Menu items render here -->
+      </div>
+      <div class="food-menu-more">
+        <button class="btn btn-primary menu-more-btn" id="view-more-items-btn" type="button">
+          <span>View More Items</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
-    <div class="food-menu-container container">
+    <div class="food-menu-container container legacy-food-menu">
 
       <!-- Royal Thali -->
       <div class="food-menu-item" data-category="veg" data-name="Royal Thali Delight" data-price="350">
@@ -300,10 +310,32 @@
       </div>
 
     </div>
-    <div style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
-      <a href="#" class="btn btn-primary" id="view-more-items-btn">View more Iteam</a>
+    <div class="legacy-food-menu-cta" style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
+      <a href="#" class="btn btn-primary" id="legacy-view-more-items-btn">View more Iteam</a>
     </div>
   </section>
+
+  <div id="menu-popup-modal" class="menu-popup-modal" aria-hidden="true">
+    <div class="menu-popup-content" role="dialog" aria-modal="true" aria-labelledby="menu-popup-title">
+      <div class="menu-popup-header">
+        <div>
+          <p class="menu-popup-kicker">More Menu Options</p>
+          <h3 id="menu-popup-title">Breakfast Menu</h3>
+        </div>
+        <button id="close-menu-popup" class="close-btn menu-popup-close" type="button" aria-label="Close menu popup">&times;</button>
+      </div>
+      <div class="menu-popup-options" role="tablist" aria-label="Expanded menu categories">
+        <button class="menu-popup-option active" data-popup-filter="breakfast" type="button">Breakfast</button>
+        <button class="menu-popup-option" data-popup-filter="veg" type="button">Veg</button>
+        <button class="menu-popup-option" data-popup-filter="nonveg" type="button">Nonveg</button>
+        <button class="menu-popup-option" data-popup-filter="special-thali" type="button">Special Thali</button>
+      </div>
+      <p id="menu-popup-summary" class="menu-popup-summary"></p>
+      <div id="menu-popup-grid" class="menu-popup-grid">
+        <!-- Popup menu items render here -->
+      </div>
+    </div>
+  </div>
 
   <!-- Testimonial Section -->
   <section id="testimonials">

@@ -8,8 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.querySelectorAll(".menu-items a");
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const menuItems = document.querySelectorAll(".food-menu-item");
-  const searchInput = document.getElementById("menu-search");
+  const foodMenuContainer = document.getElementById("food-menu-container");
+  const viewMoreItemsBtn = document.getElementById("view-more-items-btn");
+  const menuPopupModal = document.getElementById("menu-popup-modal");
+  const closeMenuPopup = document.getElementById("close-menu-popup");
+  const popupFilterButtons = document.querySelectorAll(".menu-popup-option");
+  const menuPopupTitle = document.getElementById("menu-popup-title");
+  const menuPopupSummary = document.getElementById("menu-popup-summary");
+  const menuPopupGrid = document.getElementById("menu-popup-grid");
   const backToTop = document.getElementById("backToTop");
   const contactForm = document.getElementById("contact-form");
   const toast = document.getElementById("toast");
@@ -35,7 +41,152 @@ document.addEventListener("DOMContentLoaded", function () {
   const navProfile = document.getElementById("nav-profile");
   const profileIconInitialsHolder = document.getElementById("profile-icon-initials");
   let activeCategory = "all";
+  let activePopupCategory = "breakfast";
   let cart = JSON.parse(localStorage.getItem(cartStorageKey)) || [];
+  const menuCatalog = {
+    breakfast: {
+      label: "Breakfast",
+      summary: "Four breakfast picks with light, comforting flavors to start the day right.",
+      items: [
+        {
+          name: "Sunrise Idli Sambar",
+          description: "Soft idlis served with hot sambar, coconut chutney, and a fresh tempering of curry leaves.",
+          price: 110,
+          image: "assets/Dakshin Bhojanam.jpg",
+          category: "breakfast",
+        },
+        {
+          name: "Masala Dosa Combo",
+          description: "A crisp dosa filled with spiced potato masala, paired with chutneys and a cup of sambar.",
+          price: 145,
+          image: "assets/Dakshin Bhojanam.jpg",
+          category: "breakfast",
+        },
+        {
+          name: "Aloo Paratha with Curd",
+          description: "Golden parathas stuffed with seasoned potato, served with curd, pickle, and a pat of butter.",
+          price: 135,
+          image: "assets/cover photo.jpg",
+          category: "breakfast",
+        },
+        {
+          name: "Poha Chai Delight",
+          description: "Fluffy poha with peanuts, onion, lemon, and a side of masala chai for a homestyle breakfast.",
+          price: 95,
+          image: "assets/Swad-e-dil_poster.jpg",
+          category: "breakfast",
+        },
+      ],
+    },
+    veg: {
+      label: "Veg",
+      summary: "Four veg meals packed with rich gravies, fresh breads, and satisfying lunch favorites.",
+      items: [
+        {
+          name: "Royal Thali Delight",
+          description: "Butter naan, paneer butter masala, dal makhani, jeera rice, salad, papad, and dessert.",
+          price: 350,
+          image: "assets/Royal Thali Delight.jpg",
+          category: "veg",
+        },
+        {
+          name: "Paneer Butter Masala Meal",
+          description: "Creamy paneer butter masala served with naan, jeera rice, onion salad, and mint dip.",
+          price: 280,
+          image: "assets/Veg menu dp.jpg",
+          category: "veg",
+        },
+        {
+          name: "Dakshin Bhojanam",
+          description: "A South Indian veg meal with dosa, vada, lemon rice, chutneys, sambar, and mini payasam.",
+          price: 250,
+          image: "assets/Dakshin Bhojanam.jpg",
+          category: "veg",
+        },
+        {
+          name: "Veg Lovers Lunch Platter",
+          description: "Seasonal sabzi, dal tadka, pulao, phulka, salad, and a sweet bite for a complete lunch.",
+          price: 260,
+          image: "assets/Veg menu dp.jpg",
+          category: "veg",
+        },
+      ],
+    },
+    nonveg: {
+      label: "Nonveg",
+      summary: "Four nonveg specialties made for bold appetites, dinner cravings, and spice lovers.",
+      items: [
+        {
+          name: "Tandoori Nonveg Treat",
+          description: "Tandoori chicken, chicken tikka, butter naan, biryani, onion salad, and house chutney.",
+          price: 450,
+          image: "assets/Tandoori Plater.jpg",
+          category: "nonveg",
+        },
+        {
+          name: "Coastal Catch Seafood Plate",
+          description: "A seafood combo with prawn curry, fish fry, steamed rice, tangy chutney, and sol kadhi.",
+          price: 400,
+          image: "assets/nonveg menu dp.jpg",
+          category: "nonveg",
+        },
+        {
+          name: "Pakhala Fish Plate",
+          description: "Fermented rice, aloo bharta, saga bhaja, fried fish, and curd for an authentic Odia meal.",
+          price: 340,
+          image: "assets/nonveg menu dp.jpg",
+          category: "nonveg",
+        },
+        {
+          name: "Chicken Biryani Feast",
+          description: "Fragrant chicken biryani with raita, salan, grilled chicken bites, and a cooling onion salad.",
+          price: 320,
+          image: "assets/Tandoori Plater.jpg",
+          category: "nonveg",
+        },
+      ],
+    },
+    "special-thali": {
+      label: "Special Thali",
+      summary: "Four grand thali experiences for festive cravings, family meals, and signature house favorites.",
+      items: [
+        {
+          name: "Signature Special Thali",
+          description: "Our signature platter with paneer curry, dal, pulao, breads, salad, dessert, and chef specials.",
+          price: 420,
+          image: "assets/st dp.jpg",
+          category: "special-thali",
+        },
+        {
+          name: "Maharaja Celebration Thali",
+          description: "A royal spread of rich curries, kebabs, rice, breads, sides, and an indulgent dessert finish.",
+          price: 520,
+          image: "assets/st dp.jpg",
+          category: "special-thali",
+        },
+        {
+          name: "Festival Veg Thali",
+          description: "A festive vegetarian thali with paneer, kofta, pulao, puri, chutneys, and mithai.",
+          price: 390,
+          image: "assets/Royal Thali Delight.jpg",
+          category: "special-thali",
+        },
+        {
+          name: "Family Feast Thali",
+          description: "A larger thali with multiple mains, rice, breads, condiments, and dessert made for sharing.",
+          price: 580,
+          image: "assets/st dp.jpg",
+          category: "special-thali",
+        },
+      ],
+    },
+  };
+  const featuredMenuLabels = {
+    breakfast: "Breakfast",
+    veg: "Lunch",
+    nonveg: "Dinner",
+    "special-thali": "Special Thali",
+  };
 
   function getUser() {
     const stored = localStorage.getItem(userStorageKey);
@@ -131,29 +282,126 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach((section) => observer.observe(section));
   }
 
-  function applyFilters() {
-    const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : "";
-    menuItems.forEach((item) => {
-      const category = item.dataset.category || "all";
-      const title = (item.dataset.name || "").toLowerCase();
-      const matchesCategory = activeCategory === "all" || category === activeCategory;
-      const matchesSearch = title.includes(searchTerm);
-      item.style.display = matchesCategory && matchesSearch ? "flex" : "none";
+  function getFeaturedMenuItems() {
+    return ["breakfast", "veg", "nonveg", "special-thali"].map((category) => menuCatalog[category].items[0]);
+  }
+
+  function createMenuCardMarkup(item, badgeLabel) {
+    return `
+      <article class="food-menu-item">
+        <div class="food-menu-image">
+          <img src="${item.image}" alt="${item.name}" loading="lazy" />
+          <span class="food-menu-badge">${badgeLabel}</span>
+        </div>
+        <div class="food-description">
+          <span class="food-menu-label">${menuCatalog[item.category].label}</span>
+          <h3 class="food-title">${item.name}</h3>
+          <p>${item.description}</p>
+          <div class="food-footer">
+            <p class="food-price">&#8377; ${item.price}</p>
+            <div class="food-actions">
+              <button class="favorite-btn" data-name="${item.name}" data-price="${item.price}" aria-label="Add ${item.name} to favorites">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="add-to-cart-btn" data-name="${item.name}" data-price="${item.price}">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderMenuCards(container, items, badgeLabelResolver) {
+    if (!container) return;
+    if (!items.length) {
+      container.innerHTML = '<div class="food-menu-empty">No menu items are available in this category right now.</div>';
+      return;
+    }
+
+    container.innerHTML = items.map((item) => createMenuCardMarkup(item, badgeLabelResolver(item))).join("");
+    updateFavoriteButtons();
+  }
+
+  function renderFoodMenu() {
+    const items = activeCategory === "all" ? getFeaturedMenuItems() : menuCatalog[activeCategory].items;
+    renderMenuCards(foodMenuContainer, items, (item) => {
+      return activeCategory === "all" ? featuredMenuLabels[item.category] : menuCatalog[item.category].label;
     });
+
+    filterButtons.forEach((button) => {
+      const isActive = (button.dataset.filter || "all") === activeCategory;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  }
+
+  function renderPopupMenu(category = activePopupCategory) {
+    if (!menuPopupGrid || !menuPopupTitle || !menuPopupSummary) return;
+
+    activePopupCategory = category;
+    const categoryConfig = menuCatalog[category];
+    menuPopupTitle.textContent = `${categoryConfig.label} Menu`;
+    menuPopupSummary.textContent = categoryConfig.summary;
+    renderMenuCards(menuPopupGrid, categoryConfig.items, () => categoryConfig.label);
+
+    popupFilterButtons.forEach((button) => {
+      const isActive = button.dataset.popupFilter === category;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  }
+
+  function openMenuPopup(category) {
+    if (!menuPopupModal) return;
+    renderPopupMenu(category);
+    menuPopupModal.style.display = "flex";
+    menuPopupModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenuPopupModal() {
+    if (!menuPopupModal) return;
+    menuPopupModal.style.display = "none";
+    menuPopupModal.setAttribute("aria-hidden", "true");
   }
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-      this.classList.add("active");
       activeCategory = this.dataset.filter || "all";
-      applyFilters();
+      renderFoodMenu();
     });
   });
 
-  if (searchInput) {
-    searchInput.addEventListener("input", applyFilters);
+  popupFilterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      renderPopupMenu(this.dataset.popupFilter || "breakfast");
+    });
+  });
+
+  if (viewMoreItemsBtn) {
+    viewMoreItemsBtn.addEventListener("click", function () {
+      const popupStartCategory = activeCategory === "all" ? "breakfast" : activeCategory;
+      openMenuPopup(popupStartCategory);
+    });
   }
+
+  if (closeMenuPopup) {
+    closeMenuPopup.addEventListener("click", closeMenuPopupModal);
+  }
+
+  if (menuPopupModal) {
+    menuPopupModal.addEventListener("click", function (event) {
+      if (event.target === menuPopupModal) {
+        closeMenuPopupModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeMenuPopupModal();
+      closeCartModal();
+    }
+  });
 
   window.addEventListener("scroll", function () {
     if (backToTop) {
@@ -314,14 +562,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showToast(`${itemName} added to cart`);
   }
 
-  document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
-    button.addEventListener("click", function () {
-      const itemName = button.dataset.name;
-      const itemPrice = Number(button.dataset.price || 0);
-      addToCart(itemName, itemPrice);
-    });
-  });
-
   function getFavorites() {
     const loggedUser = getLoggedUser();
     if (!loggedUser) return [];
@@ -365,12 +605,21 @@ document.addEventListener("DOMContentLoaded", function () {
     updateFavoriteButtons();
   }
 
-  document.querySelectorAll(".favorite-btn").forEach((button) => {
-    button.addEventListener("click", function () {
-      const itemName = button.dataset.name;
-      const itemPrice = Number(button.dataset.price || 0);
+  document.addEventListener("click", function (event) {
+    const addToCartButton = event.target.closest(".add-to-cart-btn");
+    if (addToCartButton) {
+      const itemName = addToCartButton.dataset.name;
+      const itemPrice = Number(addToCartButton.dataset.price || 0);
+      addToCart(itemName, itemPrice);
+      return;
+    }
+
+    const favoriteButton = event.target.closest(".favorite-btn");
+    if (favoriteButton) {
+      const itemName = favoriteButton.dataset.name;
+      const itemPrice = Number(favoriteButton.dataset.price || 0);
       toggleFavorite(itemName, itemPrice);
-    });
+    }
   });
 
   function updateProfileOrderCount() {
@@ -484,6 +733,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   redirectIfAlreadyLoggedIn();
   protectDashboard();
+  renderFoodMenu();
+  renderPopupMenu();
   updateNavbar();
   updateCartCount();
   renderCart();
